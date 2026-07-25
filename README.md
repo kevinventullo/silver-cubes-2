@@ -23,8 +23,8 @@ only primes are listed.
 |---|---|---|---|---|
 | 2, 3, 5 | known | Ghebleh, Goddyn, Mahmoodian, Verdian-Rizi | 2008 (published) | — |
 | 7 | known | Ventullo, Khodkar | 2009 (published) | `results/cube_p7_t1_h1.txt` † |
-| **11** | **solved** (was open) | Claude Opus 4.8 | 2026-05-27 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) |
-| **13** | **solved** (was open) | Claude Fable 5 | 2026-06-12 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) ‡ |
+| 11 | known | Claude Opus 4.8 | 2026-05-27 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) |
+| 13 | known | Claude Fable 5 | 2026-06-12 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) ‡ |
 | 17 | **open** | — | — | — |
 | **19** | **solved** (was open) | Claude Opus 5 | 2026-07-24 | `results/cube_p19_mult.txt`, `cube_p19_fullmult.txt` |
 | 23, 29 | **open** | — | — | — |
