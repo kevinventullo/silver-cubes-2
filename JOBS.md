@@ -5,17 +5,7 @@ Status: `./status.sh`
 
 ## Active
 
-| job | pid | command | log |
-|---|---|---|---|
-| targeted test at p = 61 and 67: do any of the 18 candidate signatures work? | 20639 | `PYTHONPATH=code .venv/bin/python code/mult_targeted.py 61 67` | `results/log_mult_targeted_6167.txt` |
-
-Success: a line `p=61 ... *** VERIFIED ***` (likewise 67). Either would be a
-further new prime obtained by construction rather than search — neither is
-remotely reachable by the block model. Failure: `no signature works`, which
-would bound the rule's reach at 43.
-
-If it dies silently (the p=43 run did once, no traceback), just relaunch;
-`watchdog_p43.sh` shows the pattern for supervising it.
+None. All solver jobs stopped 2026-07-25.
 
 ## Results so far (2026-07-25, multiplicative-symmetry framework)
 
@@ -46,6 +36,13 @@ The 18 signatures common to 13, 19, 31 are cut out exactly by
 (cls(v) ≡ 1 normalised). See `14Handoff.md` §7.
 
 ## Stopped / superseded — do not relaunch
+
+- `mult_targeted.py 61 67` (pid 20639): **no verdict in 2h50m at p = 61**.
+  Cause diagnosed: not one phase solve at p = 61 finishes in 600 s (6–9 s at
+  p = 31/43). This is *not* evidence against the rule — it is the phase
+  subproblem becoming the bottleneck. Relaunching as-is will not help; see
+  14Handoff.md §7 for the structural handle to attack the phases with.
+  Log: `results/log_mult_targeted_6167.txt`.
 
 - `mult_template.py 13 19 31 37 43` (pid 17326): completed 13, 19, 31; killed
   during 37 because its 20 s solve cap manufactures false negatives at

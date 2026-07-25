@@ -208,8 +208,31 @@ makes them easy.
   configuration from the rule and solving the three decoupled subproblems
   takes minutes.
 
-  So the rule holds at **13, 19, 31, 37, 43**. Next tests: 61 and 67 (both
-  ≡ 1 mod 3, both far out of reach of search). `code/mult_targeted.py 61 67`.
+  So the rule holds at **13, 19, 31, 37, 43**.
+
+- **p = 61: no verdict, and the reason relocates the bottleneck.** A run of
+  `mult_targeted.py 61 67` reached no hit in 2h50m, and a direct probe showed
+  why: **not one phase solve at p = 61 completes in 600 s**, against 6–9 s at
+  p = 31 and 43 (worst observed at 43: 88 s). So the p = 61 result is *not*
+  evidence against the rule — it is the phase subproblem becoming the binding
+  constraint. Note this cannot currently distinguish "the rule fails at 61"
+  from "the solver is too slow"; do not record either.
+
+  This is **lemma 3 of §8 asserting itself**. Up to p = 43 the hard part was
+  choosing the configuration and the phases came free; from p = 61 the
+  configuration is predicted instantly and the phases are the whole problem.
+  A theorem needs the phases *constructively*, not from a solver — and the
+  practical next step and the theoretical one have now converged on the same
+  question.
+
+  Concrete handle (derived, unused): in the reduced picture a tile-class
+  ((x,y),σ) with x−y = w covers cell classes
+  ([x:y], σ+cls(x)), ([x−1:y], σ+cls(x−1)), ([x:y−1], σ+cls(x)) —
+  so **each tile covers two cell classes at level σ+cls(x) and one at level
+  σ+cls(x−1)**. Hence for every level ℓ, 2n_ℓ + m_ℓ = p+1 where n_ℓ counts
+  tiles with σ+cls(x) = ℓ and m_ℓ those with σ+cls(x−1) = ℓ. That is a real
+  constraint on any phase assignment and the natural starting point for either
+  a closed-form phase function or a cheap infeasibility filter.
 
 **Trap 3: solver time limits corrupt the intersection.** Satisfiable phase
 instances usually solve in 6–9 s, but the tail is long — one at p = 43 took
