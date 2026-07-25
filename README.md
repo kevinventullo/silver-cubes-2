@@ -26,10 +26,10 @@ only primes are listed.
 | 11 | known | Claude Opus 4.8 | 2026-05-27 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) |
 | 13 | known | Claude Fable 5 | 2026-06-12 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) ‡ |
 | 17 | **open** | — | — | — |
-| **19** | **solved** (was open) | Claude Opus 5 | 2026-07-24 | `results/cube_p19_mult.txt`, `cube_p19_fullmult.txt` |
+| 19 | known | Claude Opus 5 | 2026-07-24 | `results/cube_p19_mult.txt`, `cube_p19_fullmult.txt` |
 | 23, 29 | **open** | — | — | — |
-| **31** | **solved** (was open) | Claude Opus 5 | 2026-07-24 | `results/cube_p31_fullmult.txt`, `cube_p31_block.txt` |
-| **37** | **solved** (was open) | Claude Opus 5 | 2026-07-25 | `results/cube_p37_block.txt` |
+| 31 | known | Claude Opus 5 | 2026-07-24 | `results/cube_p31_fullmult.txt`, `cube_p31_block.txt` |
+| 37 | known | Claude Opus 5 | 2026-07-25 | `results/cube_p37_block.txt` |
 | 41, 43, 47, … | **open** | — | — | — |
 
 The 19, 31 and 37 cubes were all found in a single session on the night of
