@@ -1,5 +1,9 @@
 # silver-cubes-2
 
+N.b. Everything in this repo was written by Claude Code, with the exception
+of `kv_manual_verification.py` (handwritten by KV as an independent check on
+the cubes) and this disclaimer.
+
 Silver (n,3)-cubes for prime orders — continuation of
 [silver-cubes](https://github.com/kevinventullo/silver-cubes).
 
@@ -10,21 +14,46 @@ conjectured for all n (Ghebleh–Goddyn–Mahmoodian–Verdian-Rizi, *Silver Cub
 Graphs and Combinatorics 24 (2008) 429–442); a multiplicativity theorem
 reduces the conjecture to prime orders.
 
-## New in this repo
+## Status by order
 
-Silver cubes at **p = 19, 31 and 37** — orders open in the literature.
+Composite orders follow from prime orders by the multiplicativity theorem, so
+only primes are listed.
 
-| file | order |
-|---|---|
-| `results/cube_p19_mult.txt`, `cube_p19_fullmult.txt` | 19 |
-| `results/cube_p31_block.txt`, `cube_p31_fullmult.txt` | 31 |
-| `results/cube_p37_block.txt` | 37 |
+| n | status | found by | verified | file |
+|---|---|---|---|---|
+| 2, 3, 5 | known | Ghebleh, Goddyn, Mahmoodian, Verdian-Rizi | 2008 (published) | — |
+| 7 | known | Ventullo, Khodkar | 2009 (published) | `results/cube_p7_t1_h1.txt` † |
+| **11** | **solved** (was open) | Claude Opus 4.8 | 2026-05-27 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) |
+| **13** | **solved** (was open) | Claude Fable 5 | 2026-06-12 | [silver-cubes](https://github.com/kevinventullo/silver-cubes) ‡ |
+| 17 | **open** | — | — | — |
+| **19** | **solved** (was open) | Claude Opus 5 | 2026-07-24 | `results/cube_p19_mult.txt`, `cube_p19_fullmult.txt` |
+| 23, 29 | **open** | — | — | — |
+| **31** | **solved** (was open) | Claude Opus 5 | 2026-07-24 | `results/cube_p31_fullmult.txt`, `cube_p31_block.txt` |
+| **37** | **solved** (was open) | Claude Opus 5 | 2026-07-25 | `results/cube_p37_block.txt` |
+| 41, 43, 47, … | **open** | — | — | — |
 
-Format: comment lines beginning `#`, then `x y z colour` over all of
-(Z_p)³. Each cube is verified three independent ways — `code/verify.py`
-(standalone, imports nothing else), `kv_manual_verification.py` (handwritten,
-different diagonal parametrisation), and the construction pipeline's own
-check.
+The 19, 31 and 37 cubes were all found in a single session on the night of
+2026-07-24/25; 37 landed just after midnight.
+
+† and ‡: these are *not* the original artifacts. The n = 7 and n = 13 cubes
+in `results/` were regenerated in July 2026 by the framework in `NOTES.md`
+(both verify); the original n = 13 cube found by Fable 5 on 2026-06-12, and
+the n = 11 cube, live in the [silver-cubes](https://github.com/kevinventullo/silver-cubes)
+repo. Discovery credit in the table refers to the original find.
+
+The two open classes are open for different reasons. Primes **n ≡ 2 (mod 3)**
+(17, 23, 29, 41, 47, …) are *provably outside* the framework used here — the
+order-n translation symmetry it rests on does not exist for them, and n = 11
+was found by a different, non-equivariant route. Primes **n ≡ 1 (mod 3)**
+(43, 61, 67, …) are inside the framework, but the search stalls at 43; those
+need the uniform construction described in [`14Handoff.md`](14Handoff.md)
+rather than more compute.
+
+Cube file format: comment lines beginning `#`, then `x y z colour` over all
+of (Z_n)³. Each new cube is verified three independent ways —
+`code/verify.py` (standalone, imports nothing else),
+`kv_manual_verification.py` (handwritten, different diagonal
+parametrisation), and the construction pipeline's own check.
 
     python code/verify.py results/cube_p37_block.txt
     # p=37 colors=109 diagonal_vertices=1369 (expect 1369) rainbow_failures=0
