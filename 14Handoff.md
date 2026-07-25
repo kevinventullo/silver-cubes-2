@@ -191,9 +191,14 @@ makes them easy.
   p = 31 cube in `results/` is one of them: (φ,γ,δ,ε,miss,one) = (0,1,1,2,2,1),
   v = 4, swap = 1. So cls(v) is not constant across the family, and the
   18-signature rule describes the cls(v) ≠ 0 stratum only.
-- **Open:** do the 18 survive at p = 37 and 43? `code/mult_targeted.py` tests
-  exactly those (cheap); `code/mult_template.py` sweeps everything (dear).
-  `code/mult_intersect.py` intersects hit sets across primes.
+- **p = 37: the rule survives.** Targeted test hit at signature
+  (φ,γ,δ,ε,miss,one) = (0,1,2,1,2,0), v = 2, swap = 1 — one of the 18. So the
+  rule holds at **13, 19, 31, 37**, including the two primes that killed the
+  earlier fit. Found in ~8 min by testing the candidate list, versus 391 s of
+  raw block-model search at 37 and *no verdict at all* at 43.
+- **Open: p = 43**, running (`code/mult_targeted.py 43`). A hit there would
+  be the first order reached by predicting the configuration rather than
+  searching for it. `code/mult_intersect.py` intersects hit sets across primes.
 
 **Trap 3: solver time limits corrupt the intersection.** Satisfiable phase
 instances usually solve in 6–9 s, but the tail is long — one at p = 43 took
