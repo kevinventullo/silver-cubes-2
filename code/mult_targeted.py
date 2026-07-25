@@ -31,7 +31,7 @@ def signatures():
     return S
 
 
-def run(p, tl=30.0):
+def run(p, tl=120.0):
     cls, Kj, _ = arith(p)
     K = {j: set(Kj[j]) for j in range(3)}
     n = (p * p - 1) // 3
@@ -43,6 +43,8 @@ def run(p, tl=30.0):
     t0 = time.time()
     for v in sorted(transversal_indices(p)):
         k = cls[v]
+        if k == 0:
+            continue
         for (phi0, gam0, de0, eps0, miss0, one0) in sig:
             phi, gam, de, eps, miss, one = [(k * z) % 3 for z in
                                             (phi0, gam0, de0, eps0, miss0, one0)]

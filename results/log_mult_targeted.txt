@@ -1,0 +1,3 @@
+=== p=37: 18 signatures x 2 swaps x 6 indices
+  p=37 v=2 cls(v)=1 swap=1 sig=(0, 1, 2, 1, 2, 0) -> *** VERIFIED ***
+=== p=43: 18 signatures x 2 swaps x 8 indices

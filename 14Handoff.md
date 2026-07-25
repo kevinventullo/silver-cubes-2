@@ -175,17 +175,36 @@ makes them easy.
 
 - The only labelling freedom is the primitive root, acting on all class
   indices by j ↦ λj (λ ∈ {1,2}; K_0 = cubes is canonical).
-- p = 13 and p = 19 each give **72 verified tuples of 216**, and modulo λ the
-  *same* 18 signatures, characterised exactly by
-  `miss ≡ one + δ − φ` and `one ≡ φ+δ if γ=δ, one ≢ φ+δ if γ=ε`, all with
-  cls(v) ≡ 1.
-- **That rule cannot be the whole story**: the p = 31 solution has
-  **cls(v) = 0**, a case that never occurs at 13 or 19 (there every
-  transversal index has cls(v) = 2). Its tuple is
-  (φ,γ,δ,ε,miss,one) = (0,1,1,2,2,1), v = 4, swap = 1.
-- `code/mult_template.py` sweeps all tuples per prime;
-  `code/mult_intersect.py` intersects the hit sets across primes. A tuple
-  (or a rule) valid at 13, 19, 31, 37, 43 is the target.
+- Verified tuples per prime (of the tuples passing sizes/disjointness):
+  **p = 13: 72/216, p = 19: 72/216, p = 31: 245/864**. Modulo λ these are
+  **18, 18 and 27** distinct signatures, and the 18 are **common to all
+  three** — p = 31's 27 are a strict superset.
+- The 18 are characterised exactly by
+
+      miss ≡ one + δ − φ  (mod 3)
+      one ≡ φ + δ  if γ = δ;   one ≢ φ + δ  if γ = ε
+
+  all with cls(v) ≡ 1 after normalisation. (Checked: the rule generates
+  precisely the observed set, 18 = 18.)
+- The extra 9 signatures at p = 31 have **cls(v) = 0**, a case that cannot
+  occur at 13 or 19 (there every transversal index has cls(v) = 2). The
+  p = 31 cube in `results/` is one of them: (φ,γ,δ,ε,miss,one) = (0,1,1,2,2,1),
+  v = 4, swap = 1. So cls(v) is not constant across the family, and the
+  18-signature rule describes the cls(v) ≠ 0 stratum only.
+- **Open:** do the 18 survive at p = 37 and 43? `code/mult_targeted.py` tests
+  exactly those (cheap); `code/mult_template.py` sweeps everything (dear).
+  `code/mult_intersect.py` intersects hit sets across primes.
+
+**Trap 3: solver time limits corrupt the intersection.** Satisfiable phase
+instances usually solve in 6–9 s, but the tail is long — one at p = 43 took
+**88 s and returned SAT**, one at p = 37 gave no verdict in 300 s. A sweep
+capped at 20 s therefore manufactures *false negatives* at p ≥ 37, and since
+false negatives only ever shrink an intersection, the likely outcome is a
+spuriously empty one and a wrong conclusion that no uniform rule exists. The
+defaults are now 120 s. Costs also blow up fast: p = 19 took 45 s for 216
+candidates, p = 31 took 3685 s for 864 (~19× per candidate for one prime
+step). Sweep broadly only where it is cheap; at 37 and above, test a
+candidate list with an adequate budget instead.
 
 **Two traps, both already sprung once.**
 

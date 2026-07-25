@@ -43,7 +43,7 @@ def make(p, v, phi, swap, gam, dele, eps, miss, one, cls, K):
     return A, B
 
 
-def sweep(p, tl=20.0, verbose=False):
+def sweep(p, tl=120.0, verbose=False):
     cls, Kj, _ = arith(p)
     K = {j: set(Kj[j]) for j in range(3)}
     n = (p * p - 1) // 3
