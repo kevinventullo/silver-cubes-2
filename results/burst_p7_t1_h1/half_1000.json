@@ -1,0 +1,1 @@
+{"seed": 1000, "status": "SAT", "count_so_far": 8, "done": true, "seconds": 1.6, "half": [[0, 2, 4], [0, 5, 3], [1, 2, 4], [1, 4, 0], [1, 5, 5], [2, 5, 5], [5, 2, 2], [6, 2, 2], [6, 3, 0], [6, 5, 3]], "first_solution_verified": true, "count": 8}

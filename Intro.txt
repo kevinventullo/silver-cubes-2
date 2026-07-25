@@ -1,0 +1,16 @@
+I'm trying to solve a combinatorial problem called Silver Cubes. There are more details in the the other two files 13Handoff.md CombinedFindings.md,
+but before you dive into those I want to explain just a bit of context. I've run several other claude code instances to find a solution for p = 11 as well as p = 13.
+
+The CombinedFindings file was originally written by the p = 11 solver instance, and then later modified by the p = 13 solver. So, it's a bit confusing and contains a bunch
+of perhaps useless information. So just take with a grain of salt and don't overindex on what's written there. 
+
+13Handoff.md is a much cleaner doc, pay attention to that. What I'd like to do is generalize the construction there to discover more cubes of size = 1 (mod 6). Namely, 
+p = 19, 31, 37, etc. My real goal is a general theoretical construction. Even doing so for an infinite class of primes, say those = 1 (mod 6), would be great.
+
+My thinking here is to take what we've learned about p = 7 and p = 13 to propose additional constraints on the p = 19 search space which still allow for a solution; just,
+a solution that can be found relatively quickly. And so if we can continue to hone down these constraints and find solutions for larger p, we may converge on a general 
+construction.
+
+One thought is that we may wish to generate many many solutions for say 7 and 13 to understand if there is some general rule they follow, or a very a restrictive constraint which at least one cube of each size still exists. What could be really interesting is if there is a way to general all possible solutions for these smaller values subject to some more restrictive set of constraints, such that the cardinality of the set of all such solutions is not too large. Then we could look for patterns within that set. 
+
+Anyway, take a look at those files, and let me know what you think. 

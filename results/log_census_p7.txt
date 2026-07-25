@@ -1,0 +1,8 @@
+status=OPTIMAL solutions=6826 (exhaustive) time=1695s
+saved /Users/kevinventullo/SilverCube19AndBeyond/code/../results/enum_p7_t1_h1.txt
+
+solutions read: 6826
+backbone (orbits with the same role in every solution): 0 of 42
+distinct fixed-half configurations: 680
+cycle completions per fixed half: max=27 min=1 top5=[27, 27, 27, 27, 24]
+saved /Users/kevinventullo/SilverCube19AndBeyond/code/../results/enum_p7_t1_h1_stats.json

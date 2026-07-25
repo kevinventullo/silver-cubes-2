@@ -1,0 +1,24 @@
+=== p=31 (tau=4 shapes)
+  p=31 v=4: OPTIMAL (13s)
+  ** SILVER (31,3)-CUBE VERIFIED -> results/cube_p31_block.txt
+=== p=31: SOLVED in 13s
+=== p=37 (tau=5 shapes)
+  p=37 v=2: UNKNOWN (2401s)
+  p=37 v=8: OPTIMAL (391s)
+  ** SILVER (37,3)-CUBE VERIFIED -> results/cube_p37_block.txt
+=== p=37: SOLVED in 2792s
+=== p=43 (tau=4 shapes)
+  p=43 v=7: UNKNOWN (2400s)
+  p=43 v=9: UNKNOWN (2402s)
+  p=43 v=10: UNKNOWN (2402s)
+  p=43 v=12: UNKNOWN (2400s)
+=== p=43: no verdict in 9604s
+=== p=61 (tau=5 shapes)
+  p=61 v=3: UNKNOWN (2400s)
+  p=61 v=4: UNKNOWN (2400s)
+  p=61 v=12: UNKNOWN (2400s)
+  p=61 v=19: UNKNOWN (2400s)
+  p=61 v=20: UNKNOWN (2400s)
+=== p=61: no verdict in 12002s
+=== p=67 (tau=9 shapes)
+  p=67 v=3: UNKNOWN (2400s)

@@ -1,0 +1,6 @@
+EXHAUSTIVE: 2592 solutions from 243 fixed halves in 446.8s
+saved /Users/kevinventullo/SilverCube19AndBeyond/code/../results/fastcensus_p7_t2_h1.txt (2592 lines)
+backbone (same role in every solution): 0 of 42 orbits
+fixed halves: 243 total, 243 completable
+cycle completions per completable half: max=21 min=3 top5=[21, 21, 21, 21, 21]
+saved /Users/kevinventullo/SilverCube19AndBeyond/code/../results/fastcensus_p7_t2_h1_stats.json

@@ -1,0 +1,1 @@
+known half of results/sol_p13_t1_h1.json: 70548 clauses

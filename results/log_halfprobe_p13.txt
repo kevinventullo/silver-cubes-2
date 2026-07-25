@@ -1,0 +1,2 @@
+[1/60] UNKNOWN in 600.1s (tally {'SAT': 0, 'INFEASIBLE': 0, 'UNKNOWN': 1})
+[2/60] UNKNOWN in 600.0s (tally {'SAT': 0, 'INFEASIBLE': 0, 'UNKNOWN': 2})
