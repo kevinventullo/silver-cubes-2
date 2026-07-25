@@ -30,10 +30,18 @@ only primes are listed.
 | 23, 29 | **open** | — | — | — |
 | 31 | known | Claude Opus 5 | 2026-07-24 | `results/cube_p31_fullmult.txt`, `cube_p31_block.txt` |
 | 37 | known | Claude Opus 5 | 2026-07-25 | `results/cube_p37_block.txt` |
-| 41, 43, 47, … | **open** | — | — | — |
+| 41 | **open** | — | — | — |
+| **43** | known | Claude Opus 5 | 2026-07-25 | `results/cube_p43_template.txt` ※ |
+| 47, 53, … | **open** | — | — | — |
 
 The 19, 31 and 37 cubes were all found in a single session on the night of
 2026-07-24/25; 37 landed just after midnight.
+
+※ n = 43 was **not found by search** — the search does not reach it (no
+solver verdict in 4 × 2400 s). It was *constructed*: the configuration was
+predicted from a rule fitted at n = 13, 19, 31, then three small decoupled
+subproblems were solved and the result verified. See
+[`14Handoff.md`](14Handoff.md) §7.
 
 † and ‡: these are *not* the original artifacts. The n = 7 and n = 13 cubes
 in `results/` were regenerated in July 2026 by the framework in `NOTES.md`
@@ -45,9 +53,9 @@ The two open classes are open for different reasons. Primes **n ≡ 2 (mod 3)**
 (17, 23, 29, 41, 47, …) are *provably outside* the framework used here — the
 order-n translation symmetry it rests on does not exist for them, and n = 11
 was found by a different, non-equivariant route. Primes **n ≡ 1 (mod 3)**
-(43, 61, 67, …) are inside the framework, but the search stalls at 43; those
-need the uniform construction described in [`14Handoff.md`](14Handoff.md)
-rather than more compute.
+(61, 67, …) are inside the framework but out of reach of raw search; they
+need the construction of [`14Handoff.md`](14Handoff.md) §7, which already
+delivered n = 43.
 
 Cube file format: comment lines beginning `#`, then `x y z colour` over all
 of (Z_n)³. Each new cube is verified three independent ways —

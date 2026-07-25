@@ -34,7 +34,8 @@ symmetry of order p, which exists **iff p ≡ 1 (mod 3)**. Primes p ≡ 2 (mod 3
 | **19** | **new (2026-07-25), verified** |
 | **31** | **new (2026-07-25), verified** |
 | **37** | **new (2026-07-25), verified** |
-| 43, 61, 67 | open; raw search stalls, see §6 |
+| **43** | **new (2026-07-25), verified — constructed, not searched** |
+| 61, 67 | open; raw search does not reach them, see §6 |
 
 Every cube is verified three independent ways: the in-pipeline check, the
 standalone `code/verify.py`, and `kv_manual_verification.py` (handwritten by
@@ -196,9 +197,19 @@ makes them easy.
   rule holds at **13, 19, 31, 37**, including the two primes that killed the
   earlier fit. Found in ~8 min by testing the candidate list, versus 391 s of
   raw block-model search at 37 and *no verdict at all* at 43.
-- **Open: p = 43**, running (`code/mult_targeted.py 43`). A hit there would
-  be the first order reached by predicting the configuration rather than
-  searching for it. `code/mult_intersect.py` intersects hit sets across primes.
+- **p = 43: the rule survives, and delivers a new prime.** Hit at canonical
+  signature (0,1,1,2,2,1), v = 7, cls(v) = 2, swap = 0 — actual parameters
+  (φ,γ,δ,ε,miss,one) = (0,2,2,1,1,2). Cube in
+  `results/cube_p43_template.txt`, verified by `code/verify.py` and by
+  `kv_manual_verification.py`.
+
+  **This is the first order obtained by construction rather than search**:
+  the block model gets no verdict at 43 in 4 × 2400 s, whereas predicting the
+  configuration from the rule and solving the three decoupled subproblems
+  takes minutes.
+
+  So the rule holds at **13, 19, 31, 37, 43**. Next tests: 61 and 67 (both
+  ≡ 1 mod 3, both far out of reach of search). `code/mult_targeted.py 61 67`.
 
 **Trap 3: solver time limits corrupt the intersection.** Satisfiable phase
 instances usually solve in 6–9 s, but the tail is long — one at p = 43 took
