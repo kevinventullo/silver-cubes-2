@@ -2,7 +2,7 @@
 
 N.b. Everything in this repo was written by Claude Code, with the exception
 of `kv_manual_verification.py` (handwritten by KV as an independent check on
-the cubes) and this disclaimer.
+the cubes).
 
 Silver (n,3)-cubes for prime orders — continuation of
 [silver-cubes](https://github.com/kevinventullo/silver-cubes).
