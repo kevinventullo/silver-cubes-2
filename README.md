@@ -19,7 +19,7 @@ reduces the conjecture to prime orders.
 Composite orders follow from prime orders by the multiplicativity theorem, so
 only primes are listed.
 
-| n | status | found by | verified | file |
+| n | status | found by | discovery date | file |
 |---|---|---|---|---|
 | 2, 3, 5 | known | Ghebleh, Goddyn, Mahmoodian, Verdian-Rizi | 2008 (published) | — |
 | 7 | known | Ventullo, Khodkar | 2009 (published) | `results/cube_p7_t1_h1.txt` † |
